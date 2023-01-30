@@ -41,11 +41,12 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	public GamePanel() {
 		this.setPreferredSize(new Dimension(SCREENWIDTH,SCREENHEIGHT)); // sets the size of the Jpanel
-		this.setBackground(Color.black);
+		//this.setBackground(Color.black);
 	   this.setDoubleBuffered(true);
 		this.setFocusable(true);
 		this.addKeyListener(keyHandler);   // this id the line causing an error
 		this.setFocusable(true);
+		this.setBounds(0,0,760,576); //it won't show up in layeredPane without this line
 	}
 
 
