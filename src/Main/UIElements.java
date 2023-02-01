@@ -6,6 +6,7 @@ import java.awt.LayoutManager;
 import java.util.EventListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Font;
 
 import javax.swing.Action;
 import javax.swing.JButton;
@@ -18,23 +19,24 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 
+
 public class UIElements extends JPanel implements ActionListener{
 
-	JLabel label1 = new JLabel("life counter");
-	JLabel label2 = new JLabel("clock UI");
+	JLabel label1 = new JLabel("life");
+	JLabel label2 = new JLabel("clock");
 	JLabel label3 = new JLabel("Score");
 	JSlider volume = new JSlider();
 	JButton button1 = new JButton("Pause");
 	JButton button2 = new JButton("Start");
 	JButton button3 = new JButton("Exit");
 
+	Font f  = new Font(Font.SANS_SERIF,  Font.BOLD, 20);
+
 	public UIElements(){
 	
-		
-
-		button1.setBounds(500,500,100,50);
-		button2.setBounds(350,500,100,50);
-		button3.setBounds(650,500,100,50);
+		button1.setBounds(580,500,100,50);
+		button2.setBounds(480,500,100,50);
+		button3.setBounds(680,500,100,50);
 
 		button1.setContentAreaFilled( false );
 		button1.setBorder( null );
@@ -42,6 +44,14 @@ public class UIElements extends JPanel implements ActionListener{
 		button2.setBorder( null );
 		button3.setContentAreaFilled( false );
 		button3.setBorder( null );
+
+		button1.setFont(f);
+		button2.setFont(f);
+		button3.setFont(f);
+		button1.setForeground(Color.WHITE);
+		button2.setForeground(Color.WHITE);
+		button3.setForeground(Color.WHITE);
+
 
 		button1.addActionListener(this);
         button2.addActionListener(this);
@@ -56,14 +66,13 @@ public class UIElements extends JPanel implements ActionListener{
 		label3.setOpaque(false);
 		
 		
-		label1.setText("life counter");
-		label2.setText("clock UI");
-		label3.setText("score system");
-		
-		
 		label1.setBounds(10,5,100,50);
 		label2.setBounds(310,5,100,50);
 		label3.setBounds(650,5,100,50);
+
+		label1.setFont(f);
+		label2.setFont(f);
+		label3.setFont(f);
 		
 
 		this.setBackground(new Color(0,0,0,0));
