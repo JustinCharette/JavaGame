@@ -21,10 +21,9 @@ public class DriverMain {
         pane.setLayout(null);
         pane.setPreferredSize(new Dimension(760,576));
  
-		JFrame frame  = new JFrame();
+		JFrame frame  = new JFrame("Mario Bros Overworld 1-1 recreation by Justin Charette and");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
-		frame.setTitle("Our game");	
 		frame.setSize(new Dimension(760,576));
 		frame.setLayout(new FlowLayout());
 
@@ -38,7 +37,7 @@ public class DriverMain {
 		frame.setLocationRelativeTo(null); // must be called after pack to work
 		
 		frame.setVisible(true);
-		panel.startGameThread();
+		//panel.startGameThread();
 
 	}
 

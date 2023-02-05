@@ -11,6 +11,13 @@ public class KeyHandler implements KeyListener{
 	public Boolean leftPressed=false  ;
 	public Boolean rightPressed=false;
 	
+	// gravity variables
+	public boolean jump = false;
+	private int airSpeed =0;
+	private int gravity = 1 ;
+	private int jumpSpeed = -2;
+	private int fallSpeedAfterCollision = 1;
+	private boolean inAir = false;
 	
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -23,15 +30,22 @@ public class KeyHandler implements KeyListener{
 		int code = e.getKeyCode();
 			if(code == KeyEvent.VK_W) {
 			upPressed = true;
+			
 		}
 		if(code ==KeyEvent.VK_S) {
 			downPressed = true;
+			
 		}
 		if(code ==KeyEvent.VK_A) {
 			leftPressed = true;
+		
 		}
 		if(code == KeyEvent.VK_D) {
 			rightPressed = true;
+			
+		}
+		if (code ==KeyEvent.VK_SPACE) {
+			jump = true;
 		}
 		
 		
@@ -55,7 +69,9 @@ public class KeyHandler implements KeyListener{
 		if(code1 == KeyEvent.VK_D) {
 			rightPressed = false;
 		}
-		
+		if (code1 ==KeyEvent.VK_SPACE) {
+			jump = false;
+		}
 	}
 
 }

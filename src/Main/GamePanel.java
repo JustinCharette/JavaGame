@@ -38,17 +38,22 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	TileManager tileM = new TileManager(this);
 	Thread gameThread; 
+
 	KeyHandler keyHandler = new KeyHandler();
+	public CollisionChecker checker = new CollisionChecker(this);
 	Player player = new Player(this, keyHandler);
 	
 	public GamePanel() {
 		this.setPreferredSize(new Dimension(SCREENWIDTH,SCREENHEIGHT)); // sets the size of the Jpanel
-		//this.setBackground(Color.black);
 	   this.setDoubleBuffered(true);
 		this.setFocusable(true);
-		this.addKeyListener(keyHandler);   // this id the line causing an error
+		this.addKeyListener(keyHandler);   
 		this.setFocusable(true);
-		this.setBounds(0,0,760,576); //it won't show up in layeredPane without this line
+		this.setBounds(0,0,760,576); 
+		
+		
+		
+		player.loadLevelData(tileM.mapTileNum);  // tester for collisions
 	}
 
 

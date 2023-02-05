@@ -17,20 +17,20 @@ import javax.swing.JSlider;
 import javax.swing.SwingConstants;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.awt.Font;
 
 
+public class UIElements extends JPanel  implements ActionListener{ //implements ActionListener
 
-public class UIElements extends JPanel implements ActionListener{
-
-	JLabel label1 = new JLabel("life");
-	JLabel label2 = new JLabel("clock");
-	JLabel label3 = new JLabel("Score");
+	JLabel label1 = new JLabel("<html>life<br>3</html>");
+	JLabel label2 = new JLabel("<html>Clock<br>05:00</html>");
+	JLabel label3 = new JLabel("<html>Score<br>9999999</html>");
 	JSlider volume = new JSlider();
 	JButton button1 = new JButton("Pause");
 	JButton button2 = new JButton("Start");
 	JButton button3 = new JButton("Exit");
 
-	Font f  = new Font(Font.SANS_SERIF,  Font.BOLD, 20);
+	Font f  = new Font("MV Boli",  Font.BOLD, 20);
 
 	public UIElements(){
 	
@@ -48,14 +48,14 @@ public class UIElements extends JPanel implements ActionListener{
 		button1.setFont(f);
 		button2.setFont(f);
 		button3.setFont(f);
-		button1.setForeground(Color.WHITE);
-		button2.setForeground(Color.WHITE);
-		button3.setForeground(Color.WHITE);
+		button1.setForeground(Color.YELLOW);
+		button2.setForeground(Color.YELLOW);
+		button3.setForeground(Color.YELLOW);
 
 
 		button1.addActionListener(this);
         button2.addActionListener(this);
-		button3.addActionListener(this);
+	    button3.addActionListener(this);
 
 		volume.setOpaque(true);
 		volume.setOrientation(SwingConstants.HORIZONTAL);
@@ -73,6 +73,11 @@ public class UIElements extends JPanel implements ActionListener{
 		label1.setFont(f);
 		label2.setFont(f);
 		label3.setFont(f);
+		
+		button1.setFocusable(false);
+		button2.setFocusable(false);
+		button3.setFocusable(false);
+		volume.setFocusable(false);
 		
 
 		this.setBackground(new Color(0,0,0,0));
