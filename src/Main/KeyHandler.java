@@ -3,6 +3,11 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
+/**
+ * the class that will read in charecter kep pressed and set booleans depending on the situation which is used through the rest of the program
+ * @author justi
+ *
+ */
 public class KeyHandler implements KeyListener{
 
 	
@@ -13,11 +18,11 @@ public class KeyHandler implements KeyListener{
 	
 	// gravity variables
 	public boolean jump = false;
-	private int airSpeed =0;
-	private int gravity = 1 ;
-	private int jumpSpeed = -2;
-	private int fallSpeedAfterCollision = 1;
-	private boolean inAir = false;
+	public int airSpeed =0;
+	public int gravity = 1 ;
+	public int jumpSpeed = -10;
+	public int fallSpeedAfterCollision = 1;
+	public boolean inAir = false;
 	
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -28,24 +33,26 @@ public class KeyHandler implements KeyListener{
 	@Override
 	public void keyPressed(KeyEvent e) {
 		int code = e.getKeyCode();
-			if(code == KeyEvent.VK_W) {
+			if(code == KeyEvent.VK_W || code == KeyEvent.VK_UP ) {
 			upPressed = true;
 			
 		}
-		if(code ==KeyEvent.VK_S) {
+		if(code ==KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {
 			downPressed = true;
 			
 		}
-		if(code ==KeyEvent.VK_A) {
+		if(code ==KeyEvent.VK_A || code == KeyEvent.VK_LEFT) {
 			leftPressed = true;
 		
 		}
-		if(code == KeyEvent.VK_D) {
+		if(code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {
 			rightPressed = true;
 			
 		}
-		if (code ==KeyEvent.VK_SPACE) {
+		if (code ==KeyEvent.VK_SPACE ) {
 			jump = true;
+			inAir = true;
+			
 		}
 		
 		
@@ -57,20 +64,22 @@ public class KeyHandler implements KeyListener{
 		
 	
 		
-		if(code1 == KeyEvent.VK_W) {
+		if(code1 == KeyEvent.VK_W || code1 == KeyEvent.VK_UP ) {
 			upPressed = false;
 		}
-		if(code1 ==KeyEvent.VK_S) {
+		if(code1 ==KeyEvent.VK_S || code1 == KeyEvent.VK_DOWN) {
 			downPressed = false;
 		}
-		if(code1 ==KeyEvent.VK_A) {
+		if(code1 ==KeyEvent.VK_A || code1 == KeyEvent.VK_LEFT) {
 			leftPressed = false;
 		}
-		if(code1 == KeyEvent.VK_D) {
+		if(code1 == KeyEvent.VK_D || code1 == KeyEvent.VK_RIGHT) {
 			rightPressed = false;
 		}
 		if (code1 ==KeyEvent.VK_SPACE) {
 			jump = false;
+			
+			
 		}
 	}
 

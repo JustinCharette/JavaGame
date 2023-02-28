@@ -20,6 +20,11 @@ import javax.swing.event.ChangeListener;
 import java.awt.Font;
 
 
+/**
+ * main class to manage the ui elements which will be used in a jlayered pane , will be upgreaded to make the features function
+ * @author 
+ *
+ */
 public class UIElements extends JPanel  implements ActionListener{ //implements ActionListener
 
 	JLabel label1 = new JLabel("<html>life<br>3</html>");
@@ -32,6 +37,9 @@ public class UIElements extends JPanel  implements ActionListener{ //implements 
 
 	Font f  = new Font("MV Boli",  Font.BOLD, 20);
 
+	/**
+	 * constructor which sets all the porperties of the ui elements
+	 */
 	public UIElements(){
 	
 		button1.setBounds(580,500,100,50);

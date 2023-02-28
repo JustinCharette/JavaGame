@@ -15,6 +15,11 @@ import java.awt.Graphics2D;
 
 
 
+/**
+ * main game controlelr , creates the loop and manages most inner working of the game
+ * @author justi
+ * main game controller
+ */
 public class GamePanel extends JPanel implements Runnable{
 	
 	// screen settings constants
@@ -43,13 +48,16 @@ public class GamePanel extends JPanel implements Runnable{
 	public CollisionChecker checker = new CollisionChecker(this);
 	Player player = new Player(this, keyHandler);
 	
+	/**
+	 * coinstructor which sets the some setting for the jpannel
+	 */
 	public GamePanel() {
 		this.setPreferredSize(new Dimension(SCREENWIDTH,SCREENHEIGHT)); // sets the size of the Jpanel
 	   this.setDoubleBuffered(true);
 		this.setFocusable(true);
 		this.addKeyListener(keyHandler);   
 		this.setFocusable(true);
-		this.setBounds(0,0,760,576); 
+		this.setBounds(0,0,SCREENWIDTH,SCREENHEIGHT); 
 		
 		
 		
@@ -57,11 +65,17 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 
 
+	/**
+	 * starts the thread to be used for the jpannel
+	 */
 	void startGameThread() {
 		gameThread = new Thread(this);
 		gameThread.start();
 	}
 
+    /**
+     * this is the main game loop for the program , all of it is jsut fluff to get update which updates the current position and repaint which redraws the charecter and lastly will put the thred to sleep until the next 1/60th of a nano second occurs 60  fps
+     */
 	@Override
 	public void run() {
 
@@ -100,6 +114,9 @@ public class GamePanel extends JPanel implements Runnable{
 	
 	
 	
+	/**
+	 * currently only calls update for the player charecter but eventually will have npcs as well
+	 */
 	public void update() {
 	
 	
@@ -107,6 +124,9 @@ public class GamePanel extends JPanel implements Runnable{
 		
 	}
 	
+	/**
+	 * the part that redraws the charecter and tiles as a graphics object
+	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D)g;

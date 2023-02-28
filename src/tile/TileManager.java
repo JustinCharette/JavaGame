@@ -1,20 +1,32 @@
 package tile;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import javax.imageio.ImageIO;
-
+import tile.Tile;
 import Main.GamePanel;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
+/**
+ * main class to handle the mechanism behind how each tile si diplayed which is put into a 2d array
+ * @author 
+ *
+ */
 public class TileManager {
     GamePanel gp;
     public Tile[] tile;
     public int mapTileNum[][];
 
+    /**
+     * constructor which initializes the variables
+     * @param gp
+     */
     public TileManager(GamePanel gp){
         this.gp = gp;
         tile = new Tile[10];
@@ -24,28 +36,48 @@ public class TileManager {
         loadMap();
     }
 
+    /**
+     * getter to set up the array that hoilds the different tiles to be rendered
+     */
     public void getTileImage() {
         try {
+        	File ground1 = new File("C:/eclipse workspace/JavaGame/bin/images/map/ground.png");
+            File hill1 = new File("C:/eclipse workspace/JavaGame/bin/images/map/hill1.png");
+            File hill2 = new File("C:/eclipse workspace/JavaGame/bin/images/map/hill2.png");
+            File hill3 = new File("C:/eclipse workspace/JavaGame/bin/images/map/hill3.png");
+            File hill4 = new File("C:/eclipse workspace/JavaGame/bin/images/map/hill4.png");
+            File hill5 = new File("C:/eclipse workspace/JavaGame/bin/images/map/hill5.png");
+            File hill6 = new File("C:/eclipse workspace/JavaGame/bin/images/map/hill6.png");
+            File sky1 = new File("C:/eclipse workspace/JavaGame/bin/images/map/sky.png");
+
+             BufferedImage ground_1 = ImageIO.read(ground1);
+            BufferedImage hill_1 = ImageIO.read(hill1);
+             BufferedImage hill_2 = ImageIO.read(hill2);
+             BufferedImage hill_3= ImageIO.read(hill3);
+             BufferedImage hill_4= ImageIO.read(hill4);
+            BufferedImage hill_5= ImageIO.read(hill5);
+            BufferedImage hill_6= ImageIO.read(hill6);
+             BufferedImage sky_1= ImageIO.read(sky1);
+
             tile[0] = new Tile();
-            tile[0].image = ImageIO.read(getClass().getResourceAsStream("../player/tiles/ground.png"));
+            tile[0].image = ground_1;
             tile[0].collision = true;
 
             tile[1] = new Tile();
-            tile[1].image = ImageIO.read(getClass().getResourceAsStream("../player/tiles/sky.png"));
+            tile[1].image =sky_1;
 
             tile[2] = new Tile();
-            tile[2].image = ImageIO.read(getClass().getResourceAsStream("../player/tiles/hill1.png"));
+            tile[2].image =hill_1;
             tile[3] = new Tile();
-            tile[3].image = ImageIO.read(getClass().getResourceAsStream("../player/tiles/hill2.png"));
+            tile[3].image =hill_2;
             tile[4] = new Tile();
-            tile[4].image = ImageIO.read(getClass().getResourceAsStream("../player/tiles/hill3.png"));
-            tile[5] = new Tile();
-            tile[5].image = ImageIO.read(getClass().getResourceAsStream("../player/tiles/hill4.png"));
+            tile[4].image = hill_3;
+            tile[5] =new Tile();
+            tile[5].image = hill_4;
             tile[6] = new Tile();
-            tile[6].image = ImageIO.read(getClass().getResourceAsStream("../player/tiles/hill5.png"));
+            tile[6].image =hill_5;
             tile[7] = new Tile();
-            tile[7].image = ImageIO.read(getClass().getResourceAsStream("../player/tiles/hill6.png"));
-            
+            tile[7].image = hill_6;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -53,9 +85,15 @@ public class TileManager {
 
     }
 
+    /**
+     * this is the main method that renders the entire screen loops through an array and sets tiles based on the determined layout
+     */
     public void loadMap(){
         try {
-            InputStream is = getClass().getResourceAsStream("../player/maps/map01.txt");
+        	File map = new File("C:/eclipse workspace/JavaGame/bin/images/map/maps/map01.txt");
+        	
+           // InputStream is = getClass().getResourceAsStream("../player/maps/map01.txt");
+        	InputStream is = new FileInputStream(map);
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
 
             int col=0;
@@ -81,6 +119,10 @@ public class TileManager {
         }
     }
 
+    /**
+     * method for drawing the tiles using the graphics class
+     * @param g2
+     */
     public void draw(Graphics2D g2){
         
 

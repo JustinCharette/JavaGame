@@ -11,8 +11,17 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
+/**
+ * main class
+ * @author justi
+ *
+ */
 public class DriverMain {
 
+	/**
+	 * creates all objects needed to run the program
+	 * @param args
+	 */
 	public static void main(String[] args)  {
 		JLayeredPane pane = new JLayeredPane();
 		GamePanel panel = new GamePanel();
@@ -37,7 +46,7 @@ public class DriverMain {
 		frame.setLocationRelativeTo(null); // must be called after pack to work
 		
 		frame.setVisible(true);
-		//panel.startGameThread();
+	
 
 	}
 
