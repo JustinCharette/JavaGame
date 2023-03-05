@@ -1,1 +1,1 @@
-package sprites;
+package sprites.sprites;
