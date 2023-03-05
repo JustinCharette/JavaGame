@@ -29,6 +29,7 @@ public class UIElements extends JPanel implements ActionListener{
 	JButton button1 = new JButton("Pause");
 	JButton button2 = new JButton("Start");
 	JButton button3 = new JButton("Exit");
+	JButton button4 = new JButton("How to play");
 
 	Font f  = new Font(Font.SANS_SERIF,  Font.BOLD, 20);
 
@@ -37,6 +38,7 @@ public class UIElements extends JPanel implements ActionListener{
 		button1.setBounds(580,500,100,50);
 		button2.setBounds(480,500,100,50);
 		button3.setBounds(680,500,100,50);
+		button4.setBounds(10,500,100,50);
 
 		button1.setContentAreaFilled( false );
 		button1.setBorder( null );
@@ -44,18 +46,23 @@ public class UIElements extends JPanel implements ActionListener{
 		button2.setBorder( null );
 		button3.setContentAreaFilled( false );
 		button3.setBorder( null );
+		button4.setContentAreaFilled( false );
+		button4.setBorder( null );
 
 		button1.setFont(f);
 		button2.setFont(f);
 		button3.setFont(f);
+		button4.setFont(f);
 		button1.setForeground(Color.WHITE);
 		button2.setForeground(Color.WHITE);
 		button3.setForeground(Color.WHITE);
+		button4.setForeground(Color.WHITE);
 
 
 		button1.addActionListener(this);
         button2.addActionListener(this);
 		button3.addActionListener(this);
+		button4.addActionListener(this);
 
 		volume.setOpaque(true);
 		volume.setOrientation(SwingConstants.HORIZONTAL);
@@ -87,6 +94,7 @@ public class UIElements extends JPanel implements ActionListener{
 		this.add(button1);
 		this.add(button2);
 		this.add(button3);
+		this.add(button4);
 
 	}
 
@@ -100,6 +108,9 @@ public class UIElements extends JPanel implements ActionListener{
 		   }
 		   else if(e.getSource()==button3) {
 			System.out.println("button3");
+		   }
+		   else if(e.getSource()==button4) {
+			System.out.println("button4");
 		   }
 		  
     }
