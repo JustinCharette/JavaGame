@@ -38,7 +38,7 @@ public class UIElements extends JPanel implements ActionListener{
 		button1.setBounds(580,500,100,50);
 		button2.setBounds(480,500,100,50);
 		button3.setBounds(680,500,100,50);
-		button4.setBounds(10,500,100,50);
+		button4.setBounds(300,500,200,50);
 
 		button1.setContentAreaFilled( false );
 		button1.setBorder( null );
