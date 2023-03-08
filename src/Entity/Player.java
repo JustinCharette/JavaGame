@@ -1,4 +1,4 @@
-package Model;
+package Entity;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
@@ -11,7 +11,9 @@ import javax.imageio.ImageIO;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
-import View.GamePanel;
+import Main.CollisionChecker;
+import Main.GamePanel;
+import Main.KeyHandler;
 
 /**
  * @author justin and vivian player class will be used to control and manage the
@@ -69,11 +71,41 @@ public class Player extends entity {
 	 * illusion of mounvment
 	 */
 	public void getPlayerImage() {
-
+//		File idleRight = new File("src/images/player/mario_idle.gif");
+//		File run1 = new File("src/images/player/mario_walk1.gif");
+//		File run2 = new File("src/images/player/mario_walk2.gif");
+//		File run3 = new File("src/images/player/mario_walk3.gif");
+//		File run1Left = new File("src/images/player/mario_walk1Left.gif");
+//		File run2Left = new File("src/images/player/mario_walk2Left.gif");
+//		File run3Left = new File("src/images/player/mario_walk3Left.gif");
+//		File idleLeft = new File("src/images/player/mario_idle_Left.gif");
+//		File jump1 = new File("src/images/player/mario_jump1_right.gif");
+//		File jump2 = new File("src/images/player/mario_jump2_right.gif");
 
 		try {
 			
-
+//			
+//			idle = ImageIO.read(idleRight);
+//			walk1 = ImageIO.read(run1);
+//			walk2 = ImageIO.read(run2);
+//			walk3 = ImageIO.read(run3);
+//			walk1Left = ImageIO.read(run1Left);
+//			walk2Left = ImageIO.read(run2Left);
+//			walk3Left = ImageIO.read(run3Left);
+//			LeftIdle = ImageIO.read(idleLeft);
+//			jump1Right = ImageIO.read(jump1);
+//			jump2Right = ImageIO.read(jump2);
+			
+//			idle = ImageIO.read(getClass().getResourceAsStream("/mario_idle.gif"));
+//			walk1 = ImageIO.read(getClass().getResourceAsStream("sprites/player/mario_walk1.gif"));
+//			walk2 = ImageIO.read(getClass().getResourceAsStream("sprite/player/mario_walk2.gif"));
+//			walk3 = ImageIO.read(getClass().getResourceAsStream("sprites/player/mario_walk3.gif"));
+//			walk1Left = ImageIO.read(getClass().getResourceAsStream("sprites/player/mario_walk1Left.gif"));
+//			walk2Left = ImageIO.read(getClass().getResourceAsStream("sprites/player/mario_walk2Left.gif"));
+//			walk3Left = ImageIO.read(getClass().getResourceAsStream("sprites/player/mario_walk3Left.gif"));
+//			LeftIdle = ImageIO.read(getClass().getResourceAsStream("sprites/player/mario_idle_Left.gif"));
+//			jump1Right = ImageIO.read(getClass().getResourceAsStream("sprites/player/mario_jump1_right.gif"));
+//			jump2Right = ImageIO.read(getClass().getResourceAsStream("sprites/player/mario_jump2_right.gif"));
 			
 //			
 			idle = ImageIO.read(new File("C:/eclipse workspace/JavaGame/bin/sprites/player/mario_idle.gif"));

@@ -1,4 +1,4 @@
-package View;
+package tile;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,10 +8,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import javax.imageio.ImageIO;
-
-import View.Tile;
-import controller.Controller;
-
+import tile.Tile;
+import Main.GamePanel;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
@@ -24,14 +22,13 @@ public class TileManager {
     GamePanel gp;
     public Tile[] tile;
     public int mapTileNum[][];
-  
+
     /**
      * constructor which initializes the variables
      * @param gp
      */
     public TileManager(GamePanel gp){
-       
-    	this.gp = gp;
+        this.gp = gp;
         tile = new Tile[10];
         mapTileNum = new int[gp.MAXSCREENCOLLUMN][gp.MAXSCREENROW];
 

@@ -1,35 +1,29 @@
 :: ---------------------------------------------------------------------
 :: JAP COURSE - SCRIPT
-:: ASSIGNMENTS - CST8221 - Winter 2023
+:: SCRIPT CST8221 - Winter 2023
 :: ---------------------------------------------------------------------
-:: Begin of Script (Assignments - W23)
+:: Begin of Script (A13 - W23)
 :: ---------------------------------------------------------------------
 
 CLS
 
 :: LOCAL VARIABLES ....................................................
 
-
+SET LIBDIR=lib
 SET SRCDIR=src
 SET BINDIR=bin
-SET BINOUT=a13-javac.out
 SET BINERR=a13-javac.err
 SET JARNAME=a13.jar
 SET JAROUT=a13-jar.out
 SET JARERR=a13-jar.err
 SET DOCDIR=doc
 SET DOCPACK=a13
-SET DOCOUT=a13-javadoc.out
 SET DOCERR=a13-javadoc.err
-SET MAINCLASSSRC=src/Main/DriverMain.java
-SET MAINCLASSBIN=Main.DriverMain
-
-
-
+SET MAINCLASSSRC=src/a13/Game.java
+SET MAINCLASSBIN=a13.Game
 
 @echo off
 
-ECHO "                                                                     "
 ECHO "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
 ECHO "@                                                                   @"
 ECHO "@                   #       @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  @"
@@ -52,24 +46,30 @@ ECHO "@    ((((((((((((((((((((() ))                                      @"
 ECHO "@         ((((((((((((((((()                                        @"
 ECHO "@                                                                   @"
 ECHO "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-ECHO "                                                                     "
 
-:: EXECUTION STEPS  ...................................................
-
+ECHO "[LABS SCRIPT ---------------------]"
 
 ECHO "1. Compiling ......................"
-javac -Xlint -cp ".;%SRCDIR%" %MAINCLASSSRC% -d %BINDIR% > %BINOUT% 2> %BINERR%
+::javac -Xlint -cp ".;src;/SOFT/copy/dev/java/javafx/lib/*;/SOFT/COPY/db/derby/lib/*" src/Lab.java -d bin 2> labs-javac.err
+javac -Xlint -cp ".;%SRCDIR%" %MAINCLASSSRC% -d %BINDIR% 2> %BINERR%
+
+:: ECHO "Running  ........................."
+:: start java -cp ".;bin;/SOFT/copy/dev/java/javafx/lib/*" CST8221.Main
 
 ECHO "2. Creating Jar ..................."
 cd bin
-jar cvfe %JARNAME% %MAINCLASSBIN% . > %JAROUT% 2> %JARERR%
+::jar cvfe CST8221.jar Lab . > labs-jar.out 2> labs-jar.err
+jar cvfe %JARNAME% %MAINCLASSBIN% . > ../%JAROUT% 2> ../%JARERR%
 
 ECHO "3. Creating Javadoc ..............."
 cd ..
-javadoc -cp ".;%BINDIR%" -d %DOCDIR% -sourcepath %SRCDIR% -subpackages %DOCPACK% > %DOCOUT% 2> %DOCERR%
+::javadoc -cp ".;bin;/SOFT/copy/dev/java/javafx/lib/*;/SOFT/COPY/db/derby/lib/*;/SOFT/COPY/dev/LIBS/jar/javax.servlet.jar" --module-path "C:\SOFT\COPY\dev\LIBS\javafx\lib" --add-modules javafx.controls -d doc -sourcepath src -subpackages CST8221 2> labs-javadoc.err
+javadoc -cp ".;%BINDIR%" -d %DOCDIR% -sourcepath %SRCDIR% -subpackages %DOCPACK% 2> %DOCERR%
+
 
 cd bin
 ECHO "4. Running Jar ...................."
+::start java --module-path "/SOFT/COPY/dev/LIBS/javafx/lib;/SOFT/COPY/db/derby/lib" --add-modules javafx.controls,javafx.fxml -jar CST8221.jar
 start java  -jar %JARNAME%
 cd ..
 
@@ -78,5 +78,5 @@ ECHO "                                   "
 @echo on
 
 :: ---------------------------------------------------------------------
-:: End of Script (Assignments - W23)
+:: End of Script (A13 - W23)
 :: ---------------------------------------------------------------------

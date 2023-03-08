@@ -1,14 +1,12 @@
-package View;
+package Main;
 import java.awt.Dimension;
 import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import Model.CollisionChecker;
-import Model.KeyHandler;
-import Model.Player;
-import controller.Controller;
+import Entity.Player;
+import tile.TileManager;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -23,8 +21,6 @@ import java.awt.Graphics2D;
  * main game controller
  */
 public class GamePanel extends JPanel implements Runnable{
-	
-	
 	
 	// screen settings constants
 	final int ORIGINALTILESIZE = 16;
@@ -41,43 +37,38 @@ public class GamePanel extends JPanel implements Runnable{
 		int playerX = 100;
 		int playerY = 100;
 		int playerSpeed = 4;
+		
+		
 		int fps = 60;
 	
-		Thread gameThread;
-		
-	 public TileManager tileM = new TileManager(this);
+	TileManager tileM = new TileManager(this);
+	Thread gameThread; 
 
-	        //TileManager tileM;
-			KeyHandler keyHandler;
-			public CollisionChecker checker;
-			Player player1 ;
-			
-	public Controller controller = new Controller(keyHandler,this,checker,player1);
-	Player player = new Player(this, controller.keyH);	
-
+	KeyHandler keyHandler = new KeyHandler();
+	public CollisionChecker checker = new CollisionChecker(this);
+	Player player = new Player(this, keyHandler);
 	
 	/**
-	 * 
 	 * coinstructor which sets the some setting for the jpannel
 	 */
 	public GamePanel() {
 		this.setPreferredSize(new Dimension(SCREENWIDTH,SCREENHEIGHT)); // sets the size of the Jpanel
-	    this.setDoubleBuffered(true);
-		this.setFocusable(true); 
-		this.addKeyListener(controller.keyH); 
+	   this.setDoubleBuffered(true);
+		this.setFocusable(true);
+		this.addKeyListener(keyHandler);   
 		this.setFocusable(true);
 		this.setBounds(0,0,SCREENWIDTH,SCREENHEIGHT); 
 		
 		
 		
-		//player.loadLevelData(tileM.mapTileNum);  // tester for collisions
+		player.loadLevelData(tileM.mapTileNum);  // tester for collisions
 	}
 
 
 	/**
 	 * starts the thread to be used for the jpannel
 	 */
-	public void startGameThread() {
+	void startGameThread() {
 		gameThread = new Thread(this);
 		gameThread.start();
 	}
@@ -95,7 +86,6 @@ public class GamePanel extends JPanel implements Runnable{
 			// updates information for the game
 			
 			update();
-			
 			// re draws the game with the new information
 			repaint();
 			
@@ -129,6 +119,7 @@ public class GamePanel extends JPanel implements Runnable{
 	 */
 	public void update() {
 	
+	
 		player.update();
 		
 	}
@@ -137,18 +128,12 @@ public class GamePanel extends JPanel implements Runnable{
 	 * the part that redraws the charecter and tiles as a graphics object
 	 */
 	public void paintComponent(Graphics g) {
-		
-		controller.player = player;
 		super.paintComponent(g);
 		Graphics2D g2 = (Graphics2D)g;
 
-		
-		//controller.tileM.draw(g2);
-		
 		tileM.draw(g2);
-		//controller.tileM.draw(g2);
-		controller.player.draw(g2);
-		//player.draw(g2);
+
+		player.draw(g2);
 
 		g2.dispose(); 
 		

@@ -1,14 +1,14 @@
-package Model;
+package Main;
 
-import View.GamePanel;
-import controller.Controller;
+import Entity.entity;
 
 /**
  * @author justi
  * class to check wether the user is hitting an imapassable object
  */
-        public class CollisionChecker {
+public class CollisionChecker {
 GamePanel gp;
+
 
 /**
  * coonstructor
@@ -16,7 +16,6 @@ GamePanel gp;
  */
 public CollisionChecker(GamePanel gp) {
 	this.gp = gp;
-	
 }
 	
 	public void checktile(entity entity) {
@@ -61,7 +60,7 @@ public CollisionChecker(GamePanel gp) {
 			tileNum1 = gp.tileM.mapTileNum[entityleftCol][entityTopRow];
 			tileNum2 = gp.tileM.mapTileNum[entityleftCol][entityBotRow];
 			
-			if(gp.controller.tileM.tile[tileNum1].collision == true || gp.tileM.tile[tileNum2].collision == true) {
+			if(gp.tileM.tile[tileNum1].collision == true || gp.tileM.tile[tileNum2].collision == true) {
 				entity.collisionIsTrue = true;
 			}
 			
@@ -69,7 +68,7 @@ public CollisionChecker(GamePanel gp) {
 		case "right":
 			entityRightCol = (entityRightWolrdX + entity.speed)/gp.TILESIZE;
 			tileNum1 = gp.tileM.mapTileNum[entityRightCol][entityTopRow];
-			tileNum2 =gp.tileM.mapTileNum[entityRightCol][entityBotRow];
+			tileNum2 = gp.tileM.mapTileNum[entityRightCol][entityBotRow];
 			
 			if(gp.tileM.tile[tileNum1].collision == true || gp.tileM.tile[tileNum2].collision == true) {
 				entity.collisionIsTrue = true;
