@@ -22,10 +22,28 @@ import java.awt.image.BufferedImage;
  */
 public class TileManager {
     GamePanel gp;
-    public Tile[] tile;
-    public int mapTileNum[][];
+    protected Tile[] tile;
+    protected int mapTileNum[][];
+    
+    
   
-    /**
+    public Tile[] getTile() {
+		return tile;
+	}
+
+	public void setTile(Tile[] tile) {
+		this.tile = tile;
+	}
+
+	public int[][] getMapTileNum() {
+		return mapTileNum;
+	}
+
+	public void setMapTileNum(int[][] mapTileNum) {
+		this.mapTileNum = mapTileNum;
+	}
+
+	/**
      * constructor which initializes the variables
      * @param gp
      */

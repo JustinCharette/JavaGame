@@ -11,18 +11,18 @@ import java.awt.event.KeyListener;
 public class KeyHandler implements KeyListener{
 
 	
-	public Boolean upPressed=false;
-	public Boolean downPressed=false ;
-	public Boolean leftPressed=false  ;
-	public Boolean rightPressed=false;
+	protected Boolean upPressed=false;
+	protected Boolean downPressed=false ;
+	protected Boolean leftPressed=false  ;
+	protected Boolean rightPressed=false;
 	
 	// gravity variables
-	public boolean jump = false;
-	public int airSpeed =0;
-	public int gravity = 1 ;
-	public int jumpSpeed = -10;
-	public int fallSpeedAfterCollision = 1;
-	public boolean inAir = false;
+	protected boolean jump = false;
+	protected int airSpeed =0;
+	protected int gravity = 1 ;
+	protected int jumpSpeed = -10;
+	protected int fallSpeedAfterCollision = 1;
+	protected boolean inAir = false;
 	
 	@Override
 	public void keyTyped(KeyEvent e) {

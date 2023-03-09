@@ -29,11 +29,11 @@ public class GamePanel extends JPanel implements Runnable{
 	// screen settings constants
 	final int ORIGINALTILESIZE = 16;
 	final int SCALE =3;     
-	public final int TILESIZE = ORIGINALTILESIZE * SCALE; // 48 X 48 pixels tile
-	public final int MAXSCREENCOLLUMN = 16;
-	public final int MAXSCREENROW = 12;
-	public final int SCREENWIDTH = TILESIZE * MAXSCREENCOLLUMN;  // 760 pixels
-	public final int SCREENHEIGHT = TILESIZE *  MAXSCREENROW; // 576 pixlels
+	protected final int TILESIZE = ORIGINALTILESIZE * SCALE; // 48 X 48 pixels tile
+	protected final int MAXSCREENCOLLUMN = 16;
+	protected final int MAXSCREENROW = 12;
+	protected final int SCREENWIDTH = TILESIZE * MAXSCREENCOLLUMN;  // 760 pixels
+	protected final int SCREENHEIGHT = TILESIZE *  MAXSCREENROW; // 576 pixlels
 	
 	
 	
@@ -45,7 +45,70 @@ public class GamePanel extends JPanel implements Runnable{
 	
 		Thread gameThread;
 		
-	 public TileManager tileM = new TileManager(this);
+		
+		
+		
+		
+	 public int getPlayerX() {
+			return playerX;
+		}
+
+
+		public void setPlayerX(int playerX) {
+			this.playerX = playerX;
+		}
+
+
+		public int getPlayerY() {
+			return playerY;
+		}
+
+
+		public void setPlayerY(int playerY) {
+			this.playerY = playerY;
+		}
+
+
+		public int getFps() {
+			return fps;
+		}
+
+
+		public void setFps(int fps) {
+			this.fps = fps;
+		}
+
+
+		public int getORIGINALTILESIZE() {
+			return ORIGINALTILESIZE;
+		}
+
+
+		public int getTILESIZE() {
+			return TILESIZE;
+		}
+
+
+		public int getMAXSCREENCOLLUMN() {
+			return MAXSCREENCOLLUMN;
+		}
+
+
+		public int getMAXSCREENROW() {
+			return MAXSCREENROW;
+		}
+
+
+		public int getSCREENWIDTH() {
+			return SCREENWIDTH;
+		}
+
+
+		public int getSCREENHEIGHT() {
+			return SCREENHEIGHT;
+		}
+
+	public TileManager tileM = new TileManager(this);
 
 	        //TileManager tileM;
 			KeyHandler keyHandler;

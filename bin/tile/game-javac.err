@@ -1,7 +1,0 @@
-src\Main\GamePanel.java:18: warning: [serial] serializable class GamePanel has no definition of serialVersionUID
-public class GamePanel extends JPanel implements Runnable{
-       ^
-src\Main\UIElements.java:23: warning: [serial] serializable class UIElements has no definition of serialVersionUID
-public class UIElements extends JPanel  implements ActionListener{ //implements ActionListener
-       ^
-2 warnings

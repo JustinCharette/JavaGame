@@ -23,7 +23,7 @@ public class Player extends entity {
 	GamePanel gp;
 	KeyHandler kh;
 
-	private int[][] levelData;
+	//private int[][] levelData;
 	CollisionChecker checker;
 
 	/**
@@ -37,7 +37,7 @@ public class Player extends entity {
 		this.gp = gp;
 		this.kh = kh;
 
-		playerHitbox = new Rectangle(x, y, gp.TILESIZE, gp.TILESIZE);
+		playerHitbox = new Rectangle(x, y, gp.getTILESIZE(), gp.getTILESIZE());
 		setDefaultValues();
 		direction = "idle";
 		getPlayerImage();
@@ -54,14 +54,8 @@ public class Player extends entity {
 		speed = 4;
 	}
 
-	/**
-	 * @param levelData will be used later to get unit colision when the screen will
-	 *                  be moving , loads in the map in the player class so that the
-	 *                  player may acess the array that holds the sprites
-	 */
-	public void loadLevelData(int[][] levelData) {
-		this.levelData = levelData;
-	}
+	
+
 
 	/**
 	 * creates all images that will be used to render the charecter , each action
@@ -308,7 +302,7 @@ public class Player extends entity {
 			}
 
 		}
-		g2.drawImage(image, x, y, gp.TILESIZE, gp.TILESIZE, null);
+		g2.drawImage(image, x, y, gp.getTILESIZE(), gp.getTILESIZE(), null);
 	}
 
 }
