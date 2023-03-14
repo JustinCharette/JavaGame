@@ -70,16 +70,16 @@ public class Player extends entity {
 
 			
 //			
-			idle = ImageIO.read(new File("C:/eclipse workspace/JavaGame/bin/sprites/player/mario_idle.gif"));
-			walk1 = ImageIO.read(new File("C:/eclipse workspace/JavaGame/bin/sprites/player/mario_walk1.gif"));
-			walk2 = ImageIO.read(new File("C:/eclipse workspace/JavaGame/bin/sprites/player/mario_walk2.gif"));
-			walk3 = ImageIO.read(new File("C:/eclipse workspace/JavaGame/bin/sprites/player/mario_walk3.gif"));
-			walk1Left = ImageIO.read(new File("C:/eclipse workspace/JavaGame/bin/sprites/player/mario_walk1Left.gif"));
-			walk2Left = ImageIO.read(new File("C:/eclipse workspace/JavaGame/bin/sprites/player/mario_walk2Left.gif"));
-			walk3Left = ImageIO.read(new File("C:/eclipse workspace/JavaGame/bin/sprites/player/mario_walk3Left.gif"));
-			LeftIdle = ImageIO.read(new File("C:/eclipse workspace/JavaGame/bin/sprites/player/mario_idle_Left.gif"));
-			jump1Right = ImageIO.read(new File("C:/eclipse workspace/JavaGame/bin/sprites/player/mario_jump1_right.gif"));
-			jump2Right = ImageIO.read(new File("C:/eclipse workspace/JavaGame/bin/sprites/player/mario_jump2_right.gif"));
+			idle = ImageIO.read(new File("bin/sprites/player/mario_idle.gif"));
+			walk1 = ImageIO.read(new File("bin/sprites/player/mario_walk1.gif"));
+			walk2 = ImageIO.read(new File("bin/sprites/player/mario_walk2.gif"));
+			walk3 = ImageIO.read(new File("bin/sprites/player/mario_walk3.gif"));
+			walk1Left = ImageIO.read(new File("bin/sprites/player/mario_walk1Left.gif"));
+			walk2Left = ImageIO.read(new File("bin/sprites/player/mario_walk2Left.gif"));
+			walk3Left = ImageIO.read(new File("bin/sprites/player/mario_walk3Left.gif"));
+			LeftIdle = ImageIO.read(new File("bin/sprites/player/mario_idle_Left.gif"));
+			jump1Right = ImageIO.read(new File("bin/sprites/player/mario_jump1_right.gif"));
+			jump2Right = ImageIO.read(new File("bin/sprites/player/mario_jump2_right.gif"));
 			
 			
 			

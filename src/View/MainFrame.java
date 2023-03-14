@@ -13,12 +13,11 @@ public class MainFrame {
 		
 		JLayeredPane pane = new JLayeredPane();
 		GamePanel panel = new GamePanel();
-		UIElements labels = new UIElements();
 
         pane.setLayout(null);
         pane.setPreferredSize(new Dimension(760,576));
- 
-		JFrame frame  = new JFrame("Mario Bros Overworld 1-1 recreation by Justin Charette and");
+
+		JFrame frame  = new JFrame("Mario Bros Overworld 1-1 recreation by Justin Charette and Thi Thanh Van Le");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setSize(new Dimension(760,576));

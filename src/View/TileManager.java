@@ -62,14 +62,14 @@ public class TileManager {
      */
     public void getTileImage() {
         try {
-        	File ground1 = new File("C:/eclipse workspace/JavaGame/bin/images/map/ground.png");
-            File hill1 = new File("C:/eclipse workspace/JavaGame/bin/images/map/hill1.png");
-            File hill2 = new File("C:/eclipse workspace/JavaGame/bin/images/map/hill2.png");
-            File hill3 = new File("C:/eclipse workspace/JavaGame/bin/images/map/hill3.png");
-            File hill4 = new File("C:/eclipse workspace/JavaGame/bin/images/map/hill4.png");
-            File hill5 = new File("C:/eclipse workspace/JavaGame/bin/images/map/hill5.png");
-            File hill6 = new File("C:/eclipse workspace/JavaGame/bin/images/map/hill6.png");
-            File sky1 = new File("C:/eclipse workspace/JavaGame/bin/images/map/sky.png");
+        	File ground1 = new File("bin/images/map/ground.png");
+            File hill1 = new File("bin/images/map/hill1.png");
+            File hill2 = new File("bin/images/map/hill2.png");
+            File hill3 = new File("bin/images/map/hill3.png");
+            File hill4 = new File("bin/images/map/hill4.png");
+            File hill5 = new File("bin/images/map/hill5.png");
+            File hill6 = new File("bin/images/map/hill6.png");
+            File sky1 = new File("bin/images/map/sky.png");
 
              BufferedImage ground_1 = ImageIO.read(ground1);
             BufferedImage hill_1 = ImageIO.read(hill1);
@@ -111,7 +111,7 @@ public class TileManager {
      */
     public void loadMap(){
         try {
-        	File map = new File("C:/eclipse workspace/JavaGame/bin/images/map/maps/map01.txt");
+        	File map = new File("bin/images/map/maps/map01.txt");
         	
            // InputStream is = getClass().getResourceAsStream("../player/maps/map01.txt");
         	InputStream is = new FileInputStream(map);
